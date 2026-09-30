@@ -1,0 +1,29 @@
+{
+  "name": "Payment-Gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.6.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.6.0",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "razorpay": "^2.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
