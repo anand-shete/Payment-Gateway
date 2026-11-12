@@ -1,3 +1,7 @@
+# Razorpay
+
+Razorpay Payment Gateway is a full-stack financial solutions company and payment gateway in India that lets websites and apps accept payments via UPI, credit/debit cards, netbanking, and digital wallets
+
 ## Documentations
 
 - [Razorpay Documentations](https://razorpay.com/docs/home)

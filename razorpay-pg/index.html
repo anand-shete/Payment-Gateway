@@ -9,7 +9,7 @@
     <h1>Razorpay Payment Gateway Integration</h1>
     <form id="payment-form">
       <label for="amount">Amount:</label>
-      <input type="number" id="amount" name="amount" required />
+      <input type="number" id="amount" name="amount" required min="0" />
       <br />
       <br />
       <button type="button" onclick="payNow()">Pay Now</button>
@@ -19,7 +19,7 @@
     <script>
       const payNow = async () => {
         // 1. create order ID from server
-        const response = await fetch("/create-order", {
+        const response = await fetch("http://localhost:3000/create-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -32,6 +32,7 @@
 
         const order = await response.json();
 
+        // TODO add gpay?
         // 2. pass order details to checkout (razorpay)
         const rzp = new Razorpay({
           key: "rzp_test_Thkmm5wvasoRq6",
@@ -50,7 +51,7 @@
           // 4. execute handler on payment success
           handler: async (response) => {
             try {
-              const result = await fetch("/verify-payment", {
+              const result = await fetch("http://localhost:3000/verify-payment", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
